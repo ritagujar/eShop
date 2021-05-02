@@ -1,24 +1,28 @@
-import React from 'react'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
-import { Container } from 'react-bootstrap'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import HomeScreen from './screens/HomeScreen'
-import ProductScreen from './screens/ProductScreen'
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
+import CartScreen from "./screens/CartScreen";
 
 const App = () => {
   return (
     <Router>
       <Header />
-        <main className='py-3'>
-          <Container>
-            <Route path='/' component={HomeScreen} exact />
-            <Route path='/product/:id' component={ProductScreen} exact />
-          </Container>
-        </main>
+      <main className="py-3">
+        <Container>
+          <Route path="/" component={HomeScreen} exact />
+          <Route path="/product/:id" component={ProductScreen} exact />
+
+          {/* id gonna be optional to make is optional we puted a '?'  as we just wants to go to cart screen is doent have any id*/}
+          <Route path="/cart/:id?" component={CartScreen} exact />
+        </Container>
+      </main>
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;
