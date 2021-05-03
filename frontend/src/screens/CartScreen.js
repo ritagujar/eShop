@@ -44,7 +44,7 @@ const CartScreen = ({ match, location, history }) => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your cart is empty <Link to="/">Go back</Link>
+            Your cart is empty <Link to="/">Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant="flush">
@@ -69,7 +69,6 @@ const CartScreen = ({ match, location, history }) => {
                       }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
-                        // X + 1 bcz Array bydefault starts from zero
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
