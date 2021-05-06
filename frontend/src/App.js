@@ -14,11 +14,11 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
-          <Route path="/login" component={LoginScreen} exact />
-          <Route path="/product/:id" component={ProductScreen} exact />
+          <Route path="/login" component={LoginScreen} />
+          <Route path="/product/:id" component={ProductScreen} />
 
           {/* id gonna be optional to make it optional we puted a '?'  as we just wants to go to cart screen is doent have any id*/}
-          <Route path="/cart/:id?" component={CartScreen} exact />
+          <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/" component={HomeScreen} exact />
         </Container>
       </main>
