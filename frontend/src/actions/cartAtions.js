@@ -16,9 +16,6 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
     },
   });
 
-  //After dispatching saving it to localstorage
-  // JSON.stringify bcz we can ony save strings in localStorage
-  // and once we  take it out use JSON.pare to parse it back to js (store.js)
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };
 
