@@ -1,3 +1,3 @@
 ## eShop
 
-## This is full stack eCommerce site
+## This is full stack eCommerce site.
