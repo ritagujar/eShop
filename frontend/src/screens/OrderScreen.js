@@ -33,7 +33,6 @@ const OrderScreen = ({ match }) => {
     );
   }
 
-  // eslint-disable-next-line
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get("/api/config/paypal");
@@ -49,6 +48,7 @@ const OrderScreen = ({ match }) => {
 
     if (!order || successPay) {
       dispatch({ type: ORDER_PAY_RESET });
+
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
