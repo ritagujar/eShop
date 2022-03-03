@@ -34,7 +34,7 @@ const OrderListScreen = ({ history }) => {
         <Table striped bordered hover responsive className="table-sm">
           <thead>
             <tr>
-              <th>Id</th>
+              <th>ID</th>
               <th>USER</th>
               <th>DATE</th>
               <th>TOTAL</th>
@@ -50,7 +50,6 @@ const OrderListScreen = ({ history }) => {
                 <td>{order.user && order.user.name}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>${order.totalPrice}</td>
-
                 <td>
                   {order.isPaid ? (
                     order.paidAt.substring(0, 10)
@@ -58,10 +57,9 @@ const OrderListScreen = ({ history }) => {
                     <i className="fas fa-times" style={{ color: "red" }}></i>
                   )}
                 </td>
-
                 <td>
                   {order.isDelivered ? (
-                    order.deliveredAt.substring(0, 10)
+                    order?.deliveredAt?.substring(0, 10)
                   ) : (
                     <i className="fas fa-times" style={{ color: "red" }}></i>
                   )}
