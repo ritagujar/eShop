@@ -6,18 +6,17 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listProducts } from "../actions/productActions";
 
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword;
+
   const dispatch = useDispatch();
 
-  // This useSelector will actually display the products on home screen
   const productList = useSelector((state) => state.productList);
   const { loading, products, error } = productList;
 
   useEffect(() => {
-    // This listProducts will call the function of
-    // productActions.js file and fire the REQUESTS
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listProducts(keyword));
+  }, [dispatch, keyword]);
 
   return (
     <>
