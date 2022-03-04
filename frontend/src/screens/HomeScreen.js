@@ -6,6 +6,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listProducts } from "../actions/productActions";
 import Paginate from "../components/Paginate";
+import Meta from "../components/Meta";
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
@@ -22,6 +23,7 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      <Meta />
       <h1>Letest Products</h1>
       {loading ? (
         <Loader />
